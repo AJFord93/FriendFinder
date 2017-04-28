@@ -3,8 +3,11 @@
 // Series of npm packages that we will use to give our server useful functionality
 // ==============================================================================
 
-var express = require("express");
-var bodyParser = require("body-parser");
+const express = require("express"),
+bodyParser = require("body-parser"),
+friends = require("./app/data/friends.js");
+
+
 
 // ==============================================================================
 // EXPRESS CONFIGURATION
@@ -12,10 +15,10 @@ var bodyParser = require("body-parser");
 // ==============================================================================
 
 // Tells node that we are creating an "express" server
-var app = express();
+const app = express();
 
 // Sets an initial port. We"ll use this later in our listener
-var PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 // BodyParser makes it possible for our server to interpret data sent to it.
 // The code below is pretty standard.
@@ -41,3 +44,20 @@ require("./app/routing/htmlRoutes")(app);
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
+
+
+function bestMatch(){
+  let scores = req.body.scores;
+  console.log(scores);
+
+  for(var i = 0; i < friends.length; i++){
+    let diff = 0;
+    for(var j = 0; j < friends[i].scores.length; j++){
+      console.log(friends[i].scores);
+    }
+  }
+}
+
+module.exports = bestMatch;
+// Get users scores
+//compare each element in arrays and find absolute difference
