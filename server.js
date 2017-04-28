@@ -46,18 +46,18 @@ app.listen(PORT, function() {
 });
 
 
-function bestMatch(){
-  let scores = req.body.scores;
-  console.log(scores);
+// function bestMatch(){
+//   let scores = req.body.scores;
+//   console.log(scores);
+//
+//   for(var i = 0; i < friends.length; i++){
+//     let diff = 0;
+//     for(var j = 0; j < friends[i].scores.length; j++){
+//       console.log(friends[i].scores);
+//     }
+//   }
+// }
 
-  for(var i = 0; i < friends.length; i++){
-    let diff = 0;
-    for(var j = 0; j < friends[i].scores.length; j++){
-      console.log(friends[i].scores);
-    }
-  }
-}
-
-module.exports = bestMatch;
+// module.exports = bestMatch;
 // Get users scores
 //compare each element in arrays and find absolute difference
